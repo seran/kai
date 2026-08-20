@@ -1,4 +1,4 @@
-<% if @inviter %><%= @inviter.name.presence || @inviter.handle %> invited you to join <%= Current.account&.name.presence || "Kaihai" %>.<% else %>You've been invited to join <%= Current.account&.name.presence || "Kaihai" %>.<% end %>
+<% if @inviter %><%= @inviter.name.presence || @inviter.handle %> invited you to join <%= Current.account&.name.presence || "Kai" %>.<% else %>You've been invited to join <%= Current.account&.name.presence || "Kai" %>.<% end %>
 
 Set up your account here:
 <%= edit_invitation_url(@user.generate_token_for(:invitation)) %>

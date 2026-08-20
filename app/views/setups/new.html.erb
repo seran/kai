@@ -1,4 +1,4 @@
-<% content_for :title, "Welcome to Kaihai" %>
+<% content_for :title, "Welcome to #{app_name}" %>
 
 <div class="mx-auto w-full max-w-xl space-y-8">
   <header class="space-y-1">
@@ -12,7 +12,7 @@
       <p class="text-xs text-ink-soft italic mb-4">How this place introduces itself.</p>
 
       <%= fields_for :account, @account do |account_form| %>
-        <%= render "shared/ui/input", form: account_form, field: :name, label: "Name", required: true, autofocus: true, placeholder: "Kaihai" %>
+        <%= render "shared/ui/input", form: account_form, field: :name, label: "Name", required: true, autofocus: true, placeholder: "Kai" %>
         <%= render "shared/ui/input", form: account_form, field: :tagline, label: "Tagline", placeholder: "a quiet community" %>
       <% end %>
     <% end %>

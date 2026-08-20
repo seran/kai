@@ -1,4 +1,4 @@
-# Kaihai
+# Kai
 
 A quiet community platform — spaces for posts, events, and polls, with
 admin-issued invitations and self-hostable deployment.
@@ -33,16 +33,16 @@ If you'd rather skip Kamal — for a single-machine deployment, a VPS test,
 or just to kick the tyres:
 
 ```bash
-docker build -t kaihai .
+docker build -t kai .
 docker run -d -p 80:80 \
   -e RAILS_MASTER_KEY="$(cat config/master.key)" \
-  -v kaihai-data:/rails/storage \
-  --name kaihai kaihai
+  -v kai-data:/rails/storage \
+  --name kai kai
 ```
 
 - `RAILS_MASTER_KEY` decrypts `config/credentials.yml.enc` — keep its
   value secret.
-- The `kaihai-data` volume preserves the SQLite database and uploads
+- The `kai-data` volume preserves the SQLite database and uploads
   across container restarts.
 - Add your own SSL termination (Caddy, Cloudflare, nginx) if exposing
   it on the internet — the image itself serves plain HTTP.

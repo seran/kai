@@ -6,7 +6,7 @@
   <%# ───────────────────────── Profile ───────────────────────── %>
   <%= render "shared/ui/card", padding: :lg do %>
     <h2 class="text-lg font-semibold text-ink mb-1">Profile</h2>
-    <p class="text-xs text-ink-soft italic mb-4">How you appear inside Kaihai.</p>
+    <p class="text-xs text-ink-soft italic mb-4">How you appear inside <%= app_name %>.</p>
 
     <%= form_with model: Current.user, url: user_path, method: :patch, html: { class: "contents" } do |form| %>
       <%= render "shared/ui/input", form: form, field: :name, label: "Name", required: true %>

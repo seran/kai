@@ -26,7 +26,7 @@ Two-column shell in `app/views/layouts/application.html.erb`: a fixed-width side
 
 ## Sidebar contents
 
-`app/views/shared/_sidebar.html.erb` is the only place to add nav items. The sidebar header is the **Kaihai brand** (`text-2xl font-semibold`) plus the tagline _"a quiet community"_ (`text-xs text-ink-soft italic`). The same brand + tagline pair appears in the mobile hamburger header in `application.html.erb`; change them together.
+`app/views/shared/_sidebar.html.erb` is the only place to add nav items. The sidebar header is the **Kai brand** (`text-2xl font-semibold`) plus the tagline _"a quiet community"_ (`text-xs text-ink-soft italic`). The same brand + tagline pair appears in the mobile hamburger header in `application.html.erb`; change them together.
 
 **Nav-item pattern** — each `<li>` is a `link_to` that:
 - Renders an outline icon (`<%= icon "..." , variant: :outline, size: 16 %>`) plus a label.
@@ -204,4 +204,4 @@ Need a new primitive? Create a partial under `app/views/shared/ui/`.
 - Not a forum. Threads are flat (one level of replies), not nested.
 - Not gamified. No points, badges, streaks, or leaderboards — ever.
 
-When a feature request risks turning Kaihai into one of the above, push back with the design principle that disqualifies it.
+When a feature request risks turning Kai into one of the above, push back with the design principle that disqualifies it.

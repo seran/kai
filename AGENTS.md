@@ -109,13 +109,13 @@ Locale files live in `config/locales/`, split by concern as they grow (`{en,user
 Use `git worktree` to keep a second working copy alongside the main checkout — useful for new feature work, reviewing a PR without disturbing your dev server, or running long tests in parallel.
 
 ```bash
-git worktree add ../kaihai-<name> -b feature/<name>
-cp config/master.key ../kaihai-<name>/config/
-cp storage/development.sqlite3 ../kaihai-<name>/storage/   # or run db:schema:load + dev:prime fresh
-cd ../kaihai-<name> && PORT=3001 bin/dev                   # use a non-default port if :3000 is taken
+git worktree add ../kai-<name> -b feature/<name>
+cp config/master.key ../kai-<name>/config/
+cp storage/development.sqlite3 ../kai-<name>/storage/   # or run db:schema:load + dev:prime fresh
+cd ../kai-<name> && PORT=3001 bin/dev                   # use a non-default port if :3000 is taken
 ```
 
-Cleanup when the branch is merged: `git worktree remove ../kaihai-<name>`. List active worktrees with `git worktree list`.
+Cleanup when the branch is merged: `git worktree remove ../kai-<name>`. List active worktrees with `git worktree list`.
 
 Gotchas:
 - `config/master.key` and `storage/*.sqlite3` are gitignored — copy them across, or rebuild the DB fresh in the new tree.
@@ -130,7 +130,7 @@ The sections below describe how specific subsystems in this codebase are wired. 
 
 The installation is one `Account` row (`app/models/account.rb`), holding installation-wide config (`name`, `tagline`). **Always access via `Current.account`** — never call `Account.first` or `Account.singleton` from views/helpers, so the resolver can be swapped when SaaS multi-tenancy lands.
 
-`app_name` and `app_tagline` (`ApplicationHelper`) read `Current.account.name` / `tagline` with `"Kaihai"` / `"a quiet community"` fallbacks. Views use these helpers — never hardcode the strings.
+`app_name` and `app_tagline` (`ApplicationHelper`) read `Current.account.name` / `tagline` with `"Kai"` / `"a quiet community"` fallbacks. Views use these helpers — never hardcode the strings.
 
 ### First-run wizard
 

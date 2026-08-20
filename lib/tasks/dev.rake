@@ -3,16 +3,16 @@ namespace :dev do
   task prime: :environment do
     raise "dev:prime is development-only" unless Rails.env.development?
 
-    Account.singleton.update!(name: "Kaihai", tagline: "a quiet community")
+    Account.singleton.update!(name: "Kai", tagline: "a quiet community")
 
-    admin = User.find_or_create_by!(email_address: "admin@kaihai.local") do |user|
+    admin = User.find_or_create_by!(email_address: "admin@kai.local") do |user|
       user.handle = "admin"
       user.name = "Admin User"
       user.role = :admin
       user.password = "password"
     end
 
-    regular = User.find_or_create_by!(email_address: "user@kaihai.local") do |user|
+    regular = User.find_or_create_by!(email_address: "user@kai.local") do |user|
       user.handle = "user"
       user.name = "User"
       user.role = :user
@@ -120,6 +120,6 @@ namespace :dev do
       end
     end
 
-    puts "✓ dev:prime complete — admin@kaihai.local / user@kaihai.local (password: password)"
+    puts "✓ dev:prime complete — admin@kai.local / user@kai.local (password: password)"
   end
 end

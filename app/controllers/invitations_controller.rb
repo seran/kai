@@ -9,7 +9,7 @@ class InvitationsController < ApplicationController
   def update
     if @user.update(invitation_params.merge(invited_at: nil))
       start_new_session_for(@user)
-      redirect_to root_path, notice: "Welcome to #{Current.account&.name.presence || 'Kaihai'}."
+      redirect_to root_path, notice: "Welcome to #{Current.account&.name.presence || 'Kai'}."
     else
       flash.now[:alert] = form_error_message(@user)
       render :edit, status: :unprocessable_entity

@@ -13,7 +13,7 @@ module ApplicationHelper
   end
 
   def app_name
-    Current.account.name.presence || "Kaihai"
+    Current.account.name.presence || "Kai"
   end
 
   def app_tagline
